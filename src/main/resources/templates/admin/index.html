@@ -1,0 +1,147 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../css/styleadmin.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <script src="../jsadmin/menuadmin.js"></script>
+    <script src="../jsadmin/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/styleadmin.css">
+    <script>
+        window.onload = function () {
+            loadMenuAdmin();
+            thongKe();
+            // checkLienHe();
+        }
+    </script>
+</head>
+
+<body id="body-pd">
+    <header class="header" id="header">
+        <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+        <div class="header_img"> <img id="img-login" src="https://i.imgur.com/hczKIze.jpg" alt=""> </div>
+    </header>
+    <div class="l-navbar" id="nav-bar"></div>
+    <div class="main-component">
+        <div class="col-md-9 animated bounce">
+            <div class="d-flex align-items-center mb-4 pb-4 border-bottom">
+                <div class="ms-3">
+                    <img alt="" src="../image/lich.png">
+                    <h2 class=" text-uppercase fw-weight-bold mb-0">
+                    <script language="javascript">
+                        document.write(day_name);
+                    </script>
+                    </h2>
+                    <p class="text-gray fst-italic mb-0">
+                    <div id="digital-clock"></div>
+                    </p>
+                </div>
+            </div>
+
+<!--            <h2 class="page-header" style="margin-top: 20px;">Danh sách công việc</h2>-->
+<!--            <p style="font-size: 26px">Bạn có:-->
+<!--            <p>-->
+<!--            <ul class="list-group">-->
+<!--                <li class="list-group-item d-flex justify-content-between align-items-center" id="lienHeMoi"><img-->
+<!--                        alt="" src="../image/lienhe.png" style="margin-right: 10px;"> <a href=""-->
+<!--                        style="font-size: 20px; font-family: 'auto'; color: #286090"> <b>-->
+<!--                            Liên hệ mới</b></a> <span-->
+<!--                        style="font-size: 18px; font-family: Arial, Helvetica, sans-serif; background-color: #740025;margin-top: 3.5px;padding-top: 5px;"-->
+<!--                        class="badge bg-primary rounded-pill">-->
+<!--                        <span id="soluonglienhe">0</span></li>-->
+<!--            </ul>-->
+            <div class="thongke">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="thongke1">
+                            <div class="texts">Doanh thu tháng này (VND)</div>
+                            <div>
+                            </div>
+                            <div class="soluong">
+                                <b id="doanhThu"></b>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="thongke2">
+                            <div class="texts">Số lượng quản trị</div>
+                            <div>
+                            </div>
+                            <div class="soluong">
+                                <b id="soLuongNV"></b>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="thongke3">
+                            <div class="texts">Số lượng mặt hàng hiện có</div>
+                            <div>
+                            </div>
+                            <div class="soluong">
+                                <b id="soLuongMH"></b>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="thongke4">
+                            <div class="texts">Doanh thu trong ngày (VND)</div>
+                            <div>
+                            </div>
+                            <div class="soluong">
+                                <b id="doanhThuNgay"></b>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="thongke5">
+                            <div class="texts">Số đơn hàng hoàn thành trong ngày</div>
+                            <div>
+                            </div>
+                            <div class="soluong">
+                                <b id="donhoanthanh"></b>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="thongke4">
+                            <div class="texts">Đơn nhỏ nhất</div>
+                            <div class="soluong">
+                                <b id="min"></b>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="thongke5">
+                            <div class="texts">Đơn lớn nhất</div>
+                            <div class="soluong">
+                                <b id="max"></b>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="thongke4">
+                            <div class="texts">Trung bình giá tiền/ sp</div>
+                            <div class="soluong">
+                                <b id="avg"></b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+    // swal("Xin chào", "Chào mừng bạn đến với hệ thống!", "success");
+</script>
+
+</html>

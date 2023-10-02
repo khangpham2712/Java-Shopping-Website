@@ -1,0 +1,48 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Londrina+Solid|Coda+Caption:800|Open+Sans' rel='stylesheet' type='text/css'>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="css/responsiveslides.css">
+<link rel="stylesheet" href="css/stylele.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/responsiveslides.min.js"></script>
+<script src="js/main.js"></script>
+<script src="handle/account.js"></script>
+<script src="handle/menu.js"></script>
+<script src="handle/cart.js"></script>
+<script>
+	window.onload = function(){
+		loadmenu()
+	}
+</script>
+</head>
+<body>
+<div id="menu"></div>
+<div class="contents">
+    <div class="login-page">
+        <div class="form">
+          <h1 class="form-signin-heading">ĐĂNG NHẬP</h1><hr/>
+            <div id="thongbao" class="alert alert-danger" style="display: none;"><p>Tên đăng nhập hoặc mật khẩu không đúng.</p></div>
+          <div style="font-size: 16px">
+            <input id="username" type="text" placeholder="Email" class="inputlogin"/>
+            <input id="password" type="password" placeholder="Mật khẩu" class="inputlogin"/>
+            <label style="padding-right: 130px; font-size: 16px; margin-bottom: 5px" id="label">
+            <input type="checkbox" class="form-check-input"/> Duy trì đăng nhập</label>
+            <a href="remember">Quên mật khẩu</a>
+            <div class="login-register">
+              <button onclick="login()" class="dn dndk" id="submit">Đăng nhập</button>
+              <a class="dk dndk" href="regis">Đăng ký</a>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../css/styleadmin.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.2/js/dataTables.bootstrap5.min.js"></script>
+    <link href="https://cdn.datatables.net/1.13.2/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="../jsadmin/menuadmin.js"></script>
+    <script src="../jsadmin/trademark.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/styleadmin.css">
+    <script>
+        window.onload = function(){
+            loadMenuAdmin();
+            loadAllTrademark();
+        }
+    </script>
+</head>
+<body id="body-pd">
+    <header class="header" id="header">
+        <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+        <div class="topnav-right">
+            <ul class="listmenus" style="display: flex;">
+              <li><a id="here" style="color: #dbbc0b; font-weight: bold;" href=""><i class="fa fa-bell"></i>(5) Liên hệ mới</a></li>
+              <li><a href=""><i class="fa fa-user"></i>Xin chào: Admin</a></li>
+              <li><a href=""><i class="fas fa-sign-out-alt"></i>Đăng xuất</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="l-navbar" id="nav-bar"></div>
+    <div class="main-component">
+        <div class="col-sm-12 header-sp">
+            <button onclick="clearInput()" data-bs-toggle="modal" data-bs-target="#themthuonghieu" class="btn btn-success"><i class="fa fa-plus"></i> Thêm thương hiệu</button>
+        </div>
+        <div class="col-sm-12">
+            <table id="example" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>id thương hiệu</th>
+                        <th>tên thương hiệu</th>
+                        <th>Địa chỉ</th>
+                        <th>xóa</th>
+                        <th>Sửa</th>
+                    </tr>
+                </thead>
+                <tbody id="listcategory">
+                    <tr>
+                        <td>#2342</td>
+                        <td>danh mục 1</td>
+                        <td>danh mục 1</td>
+                        <td><a class="btn btn-danger"><i class="fa fa-trash"></i> Xóa</a></td>
+                        <td><a class="btn btn-success"><i class="fa fa-trash"></i> Xóa</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="modal" id="themthuonghieu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header"><h5 class="modal-title" id="exampleModalLabel">Thêm/ cập nhật nguôn gốc xuất xứ</h5> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+            <div class="modal-body">
+                <div class="col-sm-5" style="margin: auto;">
+                    <input id="idtrade" type="hidden">
+                    <label>Tên cơ sở</label>
+                    <input id="trademarkname" type="text" class="form-control">
+                    <label>Địa chỉ</label>
+                    <input id="address" type="text" class="form-control">
+                    <button onclick="saveTradeMark()" class="btn btn-success form-control action-btn">Thêm/ Cập nhật</button>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</body>
+</html>

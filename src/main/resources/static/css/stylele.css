@@ -1,0 +1,242 @@
+/* reset css */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  html {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  #nav {
+    display: inline-block;
+  }
+  #header {
+    height: 46px;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  #header #nav li {
+    display: inline-block; /*nằm trên cùng 1 hàng*/
+    position: relative;
+  }
+  #nav .navone {
+    display: none;
+    position: absolute;
+    background-color: aliceblue;
+  }
+  #header #nav li a {
+    color: violet; /*màu chữ*/
+    text-decoration: none; /*mất gạch chân*/
+    line-height: 46px; /*để cái dòng chữ nằm giữa*/
+    padding: 0 24px; /*giãn chữ ra trái phải 34px*/
+    display: block; /*tạo ra một khối*/
+    text-transform: uppercase;
+  }
+  #nav li:hover .navone {
+    display: block;
+  }
+  #header #nav li:hover a {
+    background-color: aliceblue; /*chạm lên đổi màu*/
+  }
+  #header .search-btn {
+    float: right;
+    padding: 0 24px;
+    cursor: pointer;
+    border-radius: 11%;
+  }
+  #header .search-btn:hover {
+    background-color: red;
+  }
+  #header .search-icon {
+    color: cyan;
+    font-size: 20px;
+    line-height: 46px;
+  }
+  
+  #slider {
+    position: relative;
+    margin-top: 46px;
+    padding-top: 50%; /*tỉ lệ gốc của bức ảnh*/
+    background: url("/assets/img/logo_1589011187.png") top center / cover
+      no-repeat;
+  }
+  #slider .text-content {
+    position: absolute;
+    bottom: 47px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  #slider .text-heading {
+    font-size: 20px;
+    color: aliceblue;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    text-align: center;
+  }
+  
+  #slider .text-descript {
+    color: aliceblue;
+  }
+  
+  #content {
+  }
+  .content-section {
+    width: 950px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 64px 0;
+  }
+  .section-heading {
+    text-align: center;
+    letter-spacing: 40px;
+    padding-left: 90px;
+    color: red;
+  }
+  .section-sub-heading {
+    text-align: center;
+    padding: 14px;
+  
+    font-style: italic;
+  }
+  .about-text {
+    text-align: justify;
+    font-size: 18px;
+    line-height: 1.4;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  }
+  .title-new-product {
+    padding-left: 30px;
+    margin-top: 22px;
+    margin-bottom: 11px;
+    position: relative;
+    border-bottom: 1px solid #9b3651;
+    padding-bottom: 10px;
+  }
+  .title-new-product::after {
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    transform: rotate(45deg);
+    background: #9b3651;
+    left: 0;
+    top: 13px;
+  }
+  #content .members-list {
+    margin-top: 48px;
+  }
+  #content .member-item {
+    float: left;
+    width: 33.33333%;
+    text-align: center;
+  }
+  #content .member-name {
+    font-size: 15px;
+  }
+  #content .member-img {
+    margin-top: 15px;
+    width: 154px;
+    border-radius: 86px;
+  }
+  #footer {
+    color: rgb(198, 198, 198);
+    background-color: #272727;
+  }
+  #col_1_of_4 span_1_of_4 footer-lastgrid {
+    color: white;
+  }
+  .spl::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 0%;
+    background: #cbcbcb;
+    display: block;
+    transition: 0.2s;
+  }
+  .spa {
+    position: relative;
+  }
+  .spa:hover {
+    color: white !important;
+    transition: 0.5s;
+    text-decoration: none;
+  }
+  .spa:hover .spl::after {
+    width: 100%;
+  }
+  .spl {
+    margin: 5px 0;
+  }
+  .social-icon {
+    font-size: 24px;
+    margin-bottom: -5px;
+    margin-right: 5px;
+  }
+  .social-list {
+    margin-top: 15px !important;
+    list-style-type: none;
+  }
+  .social-list li {
+    margin-top: 10px;
+  }
+  .ftil {
+    margin-top: 20px !important;
+  }
+  .ftil li {
+    margin-top: 10px;
+  }
+  .spis {
+    background: #fff;
+    border-radius: 50px;
+    padding: 5px 10px !important;
+    transition: 0.25s;
+    cursor: pointer;
+  }
+  .spis:nth-child(1):hover {
+    background: #1da1f2;
+  }
+  .spis:nth-child(2):hover {
+    background: #375197;
+    color: #fff;
+  }
+  .spis:nth-child(3):hover {
+    background-image: linear-gradient(
+      to top right,
+      #f5ce6f,
+      #f5822e,
+      #d02e7e,
+      #7b36ac,
+      #4e5dc9
+    );
+  }
+  .spls {
+    color: #000;
+    text-decoration: none;
+  }
+  .spis:nth-child(1):hover span {
+    color: #fff;
+  }
+  .spis:nth-child(2):hover span {
+    color: #fff;
+  }
+  .spis:nth-child(3):hover span {
+    color: #fff;
+  }
+  .spa:focus {
+    text-decoration: none;
+  }
+  

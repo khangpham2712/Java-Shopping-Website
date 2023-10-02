@@ -1,0 +1,135 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Londrina+Solid|Coda+Caption:800|Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/responsiveslides.css">
+    <link rel="stylesheet" href="css/stylele.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/responsiveslides.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="handle/menu.js"></script>
+    <script src="handle/cart.js"></script>
+    <script src="handle/product.js"></script>
+    <script src="handle/comment.js"></script>
+    <script>
+        window.onload = function(){
+            loadmenu();
+            chitietsp();
+        }
+    </script>
+</head>
+
+<body>
+    <div id="menu"></div>
+    <div class="contents">
+        <br><br><br>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img id="img-detail" class="img-detail" style="width: 100%;">
+                        </div>
+                        <div class="col-md-8">
+                            <p id="name-detail" class="name-detail">TƯỢNG KHỔNG MINH MEN RẠN CAO 40 CM</p>
+                            <p id="price-detail" class="price-detail">415,000₫</p>
+                            <p class="tieudemota">MÔ TẢ SẢN PHẨM</p>
+                            <p class="motachung">Nguồn gốc xuất xứ: <span id="hangsx">BÁT TRÀNG</span></p>
+                            <p class="mausac-detail">Hình ảnh sản phẩm:</p>
+                            <div class="list-image-detail" id="list-image-detail">
+                                <div class="singel-img-detail">
+                                    <img class="list-img-detail" src="image/product.png">
+                                </div>
+                            </div><br class="clearBoth" />
+                            <div class="col-md-3" style="padding: 0;">
+                                <input value="1" id="soluongdetail" class="form-control" type="number" min="1" placeholder="số lượng">
+                            </div>
+                            <button id="themgiohang" class="btn-add-gio-hang">THÊM GIỎ HÀNG</button>
+                        </div>
+                        <div class="col-md-12">
+                            <hr>
+                            <div class="group-tabs">
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active"><a href="#home" aria-controls="home"
+                                            role="tab" data-toggle="tab">Bình luận sản phẩm</a></li>
+                                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab"
+                                            data-toggle="tab">Mô tả</a></li>
+                                </ul>
+
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane active" id="home">
+                                        <div class="listbinhluan" id="listbinhluan">
+                                            <div class="col-md-12" style="padding: 0;">
+                                                <div class="row">
+                                                    <div class="col-sm-1">
+                                                        <img class="thumbnail" src="image/user.png">
+                                                    </div>
+                                                    <div class="col-sm-5">
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading">
+                                                                <strong>myusername</strong> <span class="text-muted">commented 5 days ago</span>
+                                                                <i class="fa fa-trash"></i>
+                                                            </div>
+                                                            <div class="panel-body">Sản phẩm chất lượng </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-8" id="mycomment"><br><br>
+                                            <label>Bình luận của bạn</label>
+                                            <textarea id="noidungbl" class="form-control" style="height: 200px;"></textarea><br>
+                                            <button onclick="saveComment()" class="btn btn-primary form-control">Binh luận</button>
+                                        </div>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="profile">
+                                        <div id="motasp" class="descriptions">
+                                            This is description
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="col-md-12" style="padding: 0;">
+                        <h5 class="titledanhmuc">Sản phẩm cùng danh mục</h5>
+                    </div>
+                    <div class="row" id="spcungdanhmuc">
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 signle-item">
+                            <a href=""><img class="img-item" src="image/product.png"></a>
+                            <div class="content-item-signle">
+                                <a href="">
+                                    <p class="name-signle-item">áo thun cao cấp chính hãng</p>
+                                    <p class="price-item">4.500.000đ</p>
+                                </a>
+                                <p class="cart-item"><i class="fa fa-shopping-cart"></i></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="footer" id="footer"></div>
+</body>
+
+</html>

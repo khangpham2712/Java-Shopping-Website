@@ -1,0 +1,84 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Londrina+Solid|Coda+Caption:800|Open+Sans' rel='stylesheet' type='text/css'>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="css/responsiveslides.css">
+<link rel="stylesheet" href="css/stylele.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/responsiveslides.min.js"></script>
+<script src="js/main.js"></script>
+<script src="handle/menu.js"></script>
+<script src="handle/cart.js"></script>
+<script src="handle/checkout.js"></script>
+<script>
+    window.onload = function(){
+        loadmenu();
+        loadCheckout();
+    }
+</script>
+</head>
+<body>
+<div id="menu"></div>
+<div class="contents">
+    <div class="container">
+        <div class="row table-cart checkout">
+             <div class="col-md-8">
+                 <div class="title-checkout">
+                     <p><i class="fa fa-info-circle" aria-hidden="true"></i> Thông tin nhận hàng của bạn</p>
+                 </div>
+                 <table class="table table-checkout">
+                     <tr>
+                         <td class="bold-checkout">Họ tên: </td>
+                         <td id="hotencheck">Lê tùng vân</td>
+                     </tr>
+                     <tr>
+                         <td class="bold-checkout">Số điện thoại: </td>
+                         <td id="sdtcheck">0981263812</td>
+                     </tr>
+                     <tr>
+                         <td class="bold-checkout">Tổng tiền đơn hàng: </td>
+                         <td id="tongtien" class="money-checkout">4.500.000đ</td>
+                     </tr>
+                     <tr>
+                         <td class="bold-checkout">Phí ship: </td>
+                         <td class="money-checkout">Miễn phí ship</td>
+                     </tr>
+                     <tr>
+                         <td class="bold-checkout">Số lượng sản phẩm: </td>
+                         <td id="tongsl">3 sản phẩm</td>
+                     </tr>
+                     <tr>
+                         <td colspan="2"><button onclick="window.location.replace('taikhoan.html')" class="btn-thaydoithongtin">Thay đổi thông tin người nhận</button></td>
+                     </tr>
+                 </table>
+             </div>
+             <div class="col-md-4 chitietcheckout">
+                 <h5 class="title-chitietdathang tongtiendonhang">Ghi chú đơn hàng</h5>
+                 <input id="ghichudonhang" type="text" placeholder="ghi chú đơn hàng" class="form-control">
+                 <h5 class="title-chitietdathang">Địa chỉ nhận hàng</h5>
+                 <div id="listdcnhanhang">
+                     <label id="diachinhan" class="radio-custom">Địa chỉ: Nam từ liêm, hà nội
+                         <input type="radio" name="radio" checked="checked">
+                         <span class="checkmark"></span>
+                     </label>
+                 </div>
+                 
+                 <button onclick="window.location.href='taikhoan.html'" href="" class="add-dia-chi">Thay đổi địa chỉ nhận hàng</button>
+                 <button onclick="thanhtoanoff()" class="add-dia-chi">Thanh toán khi nhận hàng</button>
+                 <button onclick="requestPayMentMomo()" class="btn-momo">Thanh toán bằng momo</button>
+             </div>
+        </div>
+    </div>
+</div>
+<div class="footer" id="footer"></div>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../css/styleadmin.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.2/js/dataTables.bootstrap5.min.js"></script>
+    <link href="https://cdn.datatables.net/1.13.2/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="../jsadmin/menuadmin.js"></script>
+    <script src="../jsadmin/doanhthu.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/styleadmin.css">
+    <script>
+        window.onload = function(){
+            loadMenuAdmin();
+            tinhdoanhthu(-1);
+            loadSta(null);
+        }
+    </script>
+   <script
+     src="https://kit.fontawesome.com/9d1d9a82d2.js"
+     crossorigin="anonymous"></script>
+</head>
+<body id="body-pd">
+<header class="header" id="header">
+    <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+    <div class="header_img"> <img id="img-login" src="https://i.imgur.com/hczKIze.jpg" alt=""> </div>
+</header>
+<div class="l-navbar" id="nav-bar"></div>
+<div class="main-component">
+    <div class="col-sm-12 header-sp row">
+        <div class="col-md-3">
+            <p class="loctheongay">Chọn năm cần xem</p>
+            <select id="nams" class="form-control">
+                <option id="2023">2023</option>
+                <option id="2024">2024</option>
+                <option id="2025">2025</option>
+                <option id="2026">2026</option>
+                <option id="2027">2027</option>
+                <option id="2028">2028</option>
+            </select>
+        </div>
+        <div class="col-md-2"><br>
+            <button onclick="loadByNam()" class="btn btn-primary form-control" style="margin-top: 10px;"><i class="fa fa-filter"></i> Lọc</button>
+        </div>
+        <div class="col-md-4"><br>
+            <button data-bs-toggle="modal" data-bs-target="#themthuonghieu" class="btn btn-primary form-control" style="margin-top: 10px;"><i class="fa fa-calendar"></i> Doanh thu theo ngày</button>
+        </div>
+    </div>
+    <div class="col-sm-12">
+        <div class="card chart-container">
+            <canvas id="chart"></canvas>
+        </div>
+    </div>
+</div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+
+<div class="modal" id="themthuonghieu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="col-md-12 row">
+                    <div class="col-sm-5">
+                        <h5 class="modal-title" id="exampleModalLabel">Doanh thu theo ngày</h5>
+                    </div>
+                    <div class="col-sm-3">
+                        <label>Chọn ngày</label>
+                        <input id="ngay" type="date" class="form-control">
+                    </div>
+                    <div class="col-sm-2"><br>
+                        <button onclick="loc()" class="btn-primary"><i class="fa fa-filter"></i> Lọc</button>
+                    </div>
+                    <div onclick="PrintElem()" class="col-sm-2"><br>
+                        <button class="btn-primary"><i class="fa fa-print"></i> In</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body" id="noidungin">
+                <div class="col-sm-12" style="margin: auto;">
+                    <h3 style="text-align: center;">BÁO CÁO CHI TIẾT DOANH THU</h3>
+                    <h5 style="text-align: center; margin-bottom: 50px;">Trong ngày: <span id="ngaychon"></span></h5>
+                    <table class="table">
+                        <thead class="thead">
+                        <tr>
+                            <th>STT</th>
+                            <th>Khách hàng</th>
+                            <th>Mã đơn hàng</th>
+                            <th>Ngày xuất</th>
+                            <th>Mã sản phẩm</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Số lượng</th>
+                            <th>Đơn giá</th>
+                            <th>Thành tiền</th>
+                        </tr>
+                        </thead>
+                        <tbody id="listi">
+                        <tr>
+                            <td style="text-align: right;"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <p style="float: right;">Ngày lập: <span id="ngaylap"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</html>
